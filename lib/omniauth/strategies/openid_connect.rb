@@ -137,6 +137,9 @@ module OmniAuth
         if request.params['realm']
           opts[:realm] = request.params['realm']
         end
+        if request.params['cid']
+          opts[:cid] = request.params['cid']
+        end
         client.authorization_uri(opts.reject{|k,v| v.nil?})
       end
 
