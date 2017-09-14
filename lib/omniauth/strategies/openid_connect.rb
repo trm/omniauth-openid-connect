@@ -140,6 +140,9 @@ module OmniAuth
         if request.params['cid']
           opts[:cid] = request.params['cid']
         end
+        if request.params['chem']
+          opts[:chem] = request.params['chem']
+        end
         client.authorization_uri(opts.reject{|k,v| v.nil?})
       end
 
