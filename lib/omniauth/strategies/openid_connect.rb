@@ -42,6 +42,7 @@ module OmniAuth
       option :send_nonce, true
       option :send_scope_to_token_endpoint, true
       option :client_auth_method
+      option :audience
 
       uid { user_info.sub }
 
@@ -129,6 +130,7 @@ module OmniAuth
             state: new_state,
             nonce: (new_nonce if options.send_nonce),
             hd: options.hd,
+            audience: options.audience,
             prompt: options.prompt
         }
         if request.params['email']
